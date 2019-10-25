@@ -39,3 +39,36 @@ git blame | Keeps track of changes more specifically. It allows you to easily se
 
 This is to document clearly what you do in research
 
+###**SoS installation** 
+
+###**SoS workflow and sos-notebook installation with Conda**
+
+* `conda install sos sos-pbs -c conda-forge`
+* `conda install sos-notebook jupyterlab-sos sos-papermill -c conda-forge`
+* `conda install sos-r sos-python sos-bash -c conda-forge`
+* `conda install sos-r -c conda-forge`
+* `conda install sos-bash -c conda-forge`
+
+#### How to access you SoS notebook using docker
+* `$ docker run -it mdabioinfo/sos:latest /bin/bash`
+* `$ docker run -d -p 9999:8888 mdabioinfo/sos-notebook`
+* `$ docker ps` Finds the of the instances (look at the last column of the output, for example mine is: *priceless_archimedes*)
+* `$ docker logs priceless_archimedes`
+
+Now enter the URL into a browser. Tip: change the text within ( ) to your ip 
+
+<http://(10.124.143.97):8888/?token=2fcb6e87003ac99f26b7a1c021327d7dd31595e0e4b60173>
+
+* `$ docker run -d -p 8888:8888 -v $HOME:/Users/dmcs2245/work  mdabioinfo/sos-notebook`
+
+If you get a message stating that the port is already allocated use -p 9999:8888 instead
+
+## Making the WGS example for SoS from Gao
+
+1. Using docker access the SoS notebook 
+2. Clone the repository to you local folder
+  `git clone https://github.com/vatlab/sos-docs/tree/master/src/examples/k9-test`
+3. Upload the example files to Jupyter notebook
+
+
+
