@@ -1,0 +1,13 @@
+## Configuring the PATH
+
+`echo $PATH` to see the directories included in the PATH
+`export PATH=$PATH:/path/to/my/program` To add the path to your program
+`echo $PATH`
+
+##Copying directories from one location to another
+
+cp -R path_to_source path_to_destination/
+
+## Editing the bash_profile
+
+`vim ~/.bash_profile`
