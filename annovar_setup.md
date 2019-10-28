@@ -4,7 +4,7 @@
 
 1. Download Annovar from the web site (http://annovar.openbioinformatics.org/en/latest/)
 2. Unzip the file using `tar xvfz annovar.latest.tar.gz`
-3. Add the program to your $PATH
+3. Add the program to your $PATH 
 4. Create an executable version usin `chmod 777 annotate_variants.pl`
 5. Run it using `./annotate_variants.pl`
 
@@ -34,6 +34,23 @@
   $ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar popfreq_max_20150413 humandb/
   $ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar regsnpintron humandb/
   $ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar gerp++gt2 humandb/
+
+```
+2. Add the humandb/ directory to the $PATH 
+
+## Prepare the input file and run Annovar
+
+Make sure you have the VCF files you would like to annotate in a separate directory 
+
+Perform the annotation
+
+* Gene-based
+This annotation identifies which are the disrupted genes, the distance to the genes for intronic variants and for exonic variants the aminoacid change
+There are multiple gene definitions: refGene, ensGene (Ensembl) and knownGene (UCSC) are some of them
+* Filter-based
+
+*
+
 
   
   
