@@ -67,8 +67,11 @@ If you get a message stating that the port is already allocated use -p 9999:8888
 
 1. Using docker access the SoS notebook 
 2. Clone the repository to you local folder
-  `git clone https://github.com/vatlab/sos-docs/tree/master/src/examples/k9-test`
-3. Upload the example files to Jupyter notebook
+  `git clone https://github.com/vatlab/sos-docs/`
+3. Prepare the data as explained in Gao's tutorial
+4. Run sos run WGS_Call.ipynb --samples k9-test/test_samples.manifest -j2
+
+A directory containing the results will be created 
 
 
 
