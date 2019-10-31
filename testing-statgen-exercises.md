@@ -1,16 +1,17 @@
-## This is a guide to keep on track how did I checked the statgen exercises
+# This is a guide to keep on track how did I checked the statgen exercises
 
 
-### Testing IGV 
+## Testing IGV 
 
 First run this commands and follow Gao's Tutorial
 
-## Login to dockerhub
+### Login to dockerhub
 
 `docker log in`
 
-User: statisticalgenetics
-Password: ##Wombat19##
+> User: statisticalgenetics
+
+> Password: ##Wombat19##
 
 ```
 statgen-setup -h
@@ -19,8 +20,11 @@ docker push statisticalgenetics/igv
 statgen-setup login --tutorial igv --my-name statisticalgenetics
 
 ```
+Hint: use the email address obtained after running the command line and add the ip of your computer.
+For MacOS use ip=0.0.0.0
+Question: How can I add the files to a local directory so that can people can upload them to the online IGV program?
 
-### Testing VAT
+## Testing VAT
 
 ```
 statgen-setup -h
@@ -29,6 +33,8 @@ docker push statisticalgenetics/vat
 statgen-setup login --tutorial vat --my-name statisticalgenetics
 
 ```
+
+Now start running the exercise by reading the tutorial and adding the commands one by one in the terminal
 
 ## Useful commands in docker
 
