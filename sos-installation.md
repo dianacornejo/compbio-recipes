@@ -13,3 +13,16 @@
     pip3.7 install sos-r
     
     ```
+ 4. In MacOs the sos and sos-runner will be installed in a folder called 
+ 
+    /Library/Frameworks/Python.framework/Versions/3.7/bin/sos
+    
+ 5. You will have to create a symbolic link where the miniconda3 is installed
+ ```
+    cd /User/.../miniconda3/condabin/
+    ln -s /Library/Frameworks/Python.framework/Versions/3.7/bin/sos sos
+    ln -s /Library/Frameworks/Python.framework/Versions/3.7/bin/sos-runner sos-runner
+    
+  ```
+
+5. Now you will be able to run the statgen-setup script to acces de VM
