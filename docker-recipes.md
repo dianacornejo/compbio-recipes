@@ -56,6 +56,7 @@ RUN DUMMY=${DUMMY} curl -fsSL https://raw.githubusercontent.com/statgenetics/sta
 3. Push it into dockerhub
 
 `docker push statisticalgenetics/annovar`
+
 `statgen-setup login --tutorial annovar --my-name diana`
 
 4. Test the command line
