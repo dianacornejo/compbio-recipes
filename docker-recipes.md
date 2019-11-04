@@ -31,11 +31,11 @@ Being in the ~/statgen-course/docker folder run the following command:
 
 1. Create the DockerFile as the example below
 
-`FROM ubuntu:latest` *This command specifies de base image to derive from 
+`FROM ubuntu:latest` **This command specifies de base image to derive from**
 
-`MAINTAINER Diana Cornejo <dmc2245@cumc.columbia.edu>` #This command indicates who created the image
+`MAINTAINER Diana Cornejo <dmc2245@cumc.columbia.edu>` **This command indicates who created the image**
 
-`WORKDIR /root` #This command is to specify the working directory
+`WORKDIR /root` **This command is to specify the working directory**
 
 `#Install dependency tools and deploy data-set package that Carl made
 RUN echo "deb [trusted=yes] http://statgen.us/deb ./" | tee -a /etc/apt/sources.list.d/statgen.list && \
@@ -43,7 +43,7 @@ RUN echo "deb [trusted=yes] http://statgen.us/deb ./" | tee -a /etc/apt/sources.
     apt-get install -y annotation-tutorial && \
     apt-get clean`
     
-#The above commands indicate the .deb package to install in this case annovar from what Carl had prepared earlier http://statgen.us/deb/
+**The above commands indicate the .deb package to install in this case annovar from what Carl had prepared earlier http://statgen.us/deb/**
 
 `## Update the exercise text
 ARG DUMMY=unknown
