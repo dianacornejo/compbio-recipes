@@ -25,3 +25,46 @@ Docker is a service for finding and sharing container images with your team
           docker build -t <your_username>/my-first-repo .
           docker build -t dianacornejo/new-repo . 
             
+## Creating a container for annovar in statgen-courses
+
+Being in the ~/statgen-course/docker folder run the following command:
+
+1. Create the DockerFile as the example below
+
+`FROM ubuntu:latest` *This command specifies de base image to derive from 
+
+`MAINTAINER Diana Cornejo <dmc2245@cumc.columbia.edu>` #This command indicates who created the image
+
+`WORKDIR /root` #This command is to specify the working directory
+
+`#Install dependency tools and deploy data-set package that Carl made
+RUN echo "deb [trusted=yes] http://statgen.us/deb ./" | tee -a /etc/apt/sources.list.d/statgen.list && \
+    apt-get update && \
+    apt-get install -y annotation-tutorial && \
+    apt-get clean`
+    
+#The above commands indicate the .deb package to install in this case annovar from what Carl had prepared earlier http://statgen.us/deb/
+
+`## Update the exercise text
+ARG DUMMY=unknown
+RUN DUMMY=${DUMMY} curl -fsSL https://raw.githubusercontent.com/statgenetics/statgen-courses/master/handout/FunctionalAnnotation.2019.docx`
+
+2. Build the docker image
+
+`docker build -t statisticalgenetics/annovar -f ./annovar.dockerfile .`
+
+3. Push it into dockerhub
+
+`docker push statisticalgenetics/annovar`
+`statgen-setup login --tutorial annovar --my-name diana`
+
+4. Test the command line
+
+Start the tutorial as is written in the exercise
+
+
+
+
+
+
+
