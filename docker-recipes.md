@@ -63,7 +63,8 @@ RUN DUMMY=${DUMMY} curl -fsSL https://raw.githubusercontent.com/statgenetics/sta
 
 Start the tutorial as is written in the exercise
 
-## Creating a docker container for the Regression exercise based on Carl's deb packages
+## Creating a docker container for the Regression exercise. 
+This is based on Carl's deb packages
 
 1. Create the docker file
 
@@ -104,6 +105,7 @@ RUN curl -fsSL https://raw.githubusercontent.com/statgenetics/statgen-courses/ma
 
 Based on the exercise test that it runs
 
+### Create a docker container for the population 
 
 
 
