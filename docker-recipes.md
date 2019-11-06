@@ -92,10 +92,17 @@ RUN curl -fsSL https://raw.githubusercontent.com/statgenetics/statgen-courses/ma
 
 2. Build the docker image
 
+`docker build -t statisticalgenetics/regression -f ./regression.dockerfile .`
+
+3. Push the image into dockerhub
+
 `docker push statisticalgenetics/regression`
 
 `statgen-setup login --tutorial regression --my-name diana`
 
+4. Test the command line
+
+Based on the exercise test that it runs
 
 
 
