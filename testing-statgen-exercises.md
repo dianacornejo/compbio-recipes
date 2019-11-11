@@ -1,5 +1,8 @@
 # This is a guide to keep on track how did I checked the statgen exercises
 
+First login as root in the virtual machine
+ssh root@104.156.251.54
+password: diana_test
 
 ## Testing IGV 
 
