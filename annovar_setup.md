@@ -27,7 +27,6 @@
   $ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar kaviar_20150923 humandb/ 
   $ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar abraom humandb/ 
   $ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar 1000g2015aug humandb/ 
-  $ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar gme humandb/
   $ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar avsnp150 humandb/
   $ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar clinvar_20190305 humandb/
   $ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar cadd13gt20 humandb/
@@ -49,8 +48,12 @@ This annotation identifies which are the disrupted genes, the distance to the ge
 There are multiple gene definitions: refGene, ensGene (Ensembl) and knownGene (UCSC) are some of them
 * Filter-based
 
-*
+* Region-based
 
+## Use commandline to annotate
 
+table_annovar.pl Batch1_combine.snpindel.vcf humandb/ -buildver hg19 -out Batch1_combine.snpindel_ANN.vcf -remove -protocol refGeneWithVer,knownGene,ensGene,dbnsfp35a,dbscsnv11,esp6500siv2_ea,esp6500siv2_aa,esp6500siv2_all,exac03,gnomad211_exome,gnomad211_genome,kaviar_20150923,abraom,1000g2015aug,gme,avsnp150,clinvar_20190305,cadd13gt20,popfreq_max_20150413,regsnpintron,gerp++gt2 -operation g,g,g,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f -nastring . -csvout 
+
+table_annovar.pl Batch1_combine.snpindel.vcf humandb/ -buildver hg19 -out Batch1_combine.snpindel_ANN.vcf -remove -protocol knownGene -operation g -nastring . -csvout -vcfinput
   
   
