@@ -3,14 +3,23 @@
 First login as root in the virtual machine
 
 ssh root@104.156.251.54
+
 password: diana_test
 
 `curl -fsSL https://raw.githubusercontent.com/statgenetics/statgen-courses/master/src/vm-setup.sh -o /tmp/vm-setup.sh
 bash /tmp/vm-setup.sh`
 
-To start tutorial on server
+To *start* tutorial on server
 
-`statgen-setup launch --tutorial vat pseq`
+`statgen-setup login --tutorial annovar vat pseq --my-name <your-name>`
+
+To *restart* a tutorial
+
+`statgen-setup login --tutorial annovar --restart`
+
+To build an image using statgen-setup
+
+`statgen-setup build --tutorial <tutorial-name>`
 
 
 ## Testing IGV 
@@ -21,9 +30,9 @@ First run this commands and follow Gao's Tutorial
 
 `docker log in`
 
-> User: statisticalgenetics
+User: statisticalgenetics
 
-> Password: ##Wombat19##
+Password: ##Wombat19##
 
 ```
 statgen-setup -h
@@ -69,7 +78,27 @@ statgen-setup login --tutorial popgen --my-name statisticalgenetics
 
 ```
 
+## Testing Annovar
+
+```
+statgen-setup -h
+docker build --build-arg DUMMY=`date +%s` -t statisticalgenetics/annovar -f docker/annovar.dockerfile docker 
+docker push statisticalgenetics/annovar
+```
+
+The two commands above where replaced by `statgen-setup build --tutorial annovar`
+
+Now login into the VM and run the exercise in the cloud
+```
+statgen-setup login --tutorial annovar --my-name statisticalgenetics
+
+```
+
 ## Testing Regression
+
+## Testing GEMINI
+
+
 
 ## Useful commands in docker
 
@@ -77,5 +106,5 @@ statgen-setup login --tutorial popgen --my-name statisticalgenetics
    docker pull <image>
    docker images
    docker stop <container id>
-
+```
 
