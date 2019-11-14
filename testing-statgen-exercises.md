@@ -2,16 +2,16 @@
 
 First login as root in the virtual machine
 
+```bash
 ssh root@104.156.251.54
-
-password: diana_test
-
-`curl -fsSL https://raw.githubusercontent.com/statgenetics/statgen-courses/master/src/vm-setup.sh -o /tmp/vm-setup.sh
-bash /tmp/vm-setup.sh`
+password:diana_test
+curl -fsSL https://raw.githubusercontent.com/statgenetics/statgen-courses/master/src/vm-setup.sh -o /tmp/vm-setup.sh
+bash /tmp/vm-setup.sh
+```
 
 To *start* tutorial on server
 
-`statgen-setup login --tutorial annovar vat pseq --my-name <your-name>`
+`statgen-setup login --tutorial "annovar vat pseq" --my-name <your-name>`
 
 To *restart* a tutorial
 
@@ -98,7 +98,18 @@ statgen-setup login --tutorial annovar --my-name statisticalgenetics
 
 ## Testing GEMINI
 
+```
+statgen-setup build --tutorial gemini
+statgen-setup login --tutorial gemini --my-name statisticalgenetics
 
+```
+## Testing MLINK
+
+```
+statgen-setup build --tutorial mlink
+statgen-setup login --tutorial mlink --my-name statisticalgenetics
+
+```
 
 ## Useful commands in docker
 
