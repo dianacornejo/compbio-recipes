@@ -52,7 +52,7 @@ There are multiple gene definitions: refGene, ensGene (Ensembl) and knownGene (U
 
 ## Use commandline to annotate
 
-sudo table_annovar.pl Batch1_combine.snpindel.vcf /usr/local/bin/humandb/ -buildver hg19 -out Batch1_combine.snpindel_ANN.vcf -remove -protocol refGeneWithVer,knownGene,ensGene,dbnsfp35a,dbscsnv11,esp6500siv2_ea,esp6500siv2_aa,esp6500siv2_all,exac03,gnomad211_exome,gnomad211_genome,kaviar_20150923,abraom,gme,avsnp150,clinvar_20190305,cadd13gt20,popfreq_max_20150413,regsnpintron,gerp++gt2 -operation gx,g,g,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f  -argument '-splicing 12 -exonicsplicing','-splicing 12 -exonicsplicing','-splicing 40',,,,,,,,,,,,,,,,, -nastring .  -xreffile LoFtool_scores.txt -otherinfo -intronhgvs 40 -vcfinput
+sudo table_annovar.pl Batch1_combine.snpindel.vcf /usr/local/bin/humandb/ -buildver hg19 -out Batch1_combine.snpindel_ANN.vcf -remove -protocol refGeneWithVer,knownGene,ensGene,dbnsfp35a,dbscsnv11,exac03,gnomad211_exome,gnomad211_genome,kaviar_20150923,abraom,gme,avsnp150,clinvar_20190305,cadd13gt20,popfreq_max_20150413,regsnpintron,gerp++gt2 -operation gx,g,g,f,f,f,f,f,f,f,f,f,f,f,f,f,f  -argument '-splicing 12 -exonicsplicing','-splicing 12 -exonicsplicing','-splicing 40',,,,,,,,,,,,,, -nastring .  -xreffile LoFtool_scores.txt -intronhgvs 40 -vcfinput
 
 
 ### filter based on splice exon
@@ -64,6 +64,8 @@ awk 'FNR == 1 {print}/pathogenic|Pathogenic/{print}'  FIN11.raw.snpindel.vcf.gz.
 
 ### filter more based on frequency
 
-annotate_variation.pl -filter -dbtype popfreq_max_20150413 -build hg19 -score_threshold 0.005 -out 
-Batch1_combine.snpindel_ANN.vcf.splice_exon Batch1_combine.snpindel_ANN.vcf.hg19_multianno_splice_exon.txt  /usr/local/bin/humandb/
+annotate_variation.pl -filter -dbtype popfreq_max_20150413 -build hg19 -score_threshold 0.005 -out Batch1_combine.snpindel.hg19_multianno_splice_exon_popmax Batch1_combine.snpindel.hg19_multianno_splice_exon.txt /usr/local/bin/humandb/
+
+**The filtering option of annovar accepts .avinput and .txt formats as input**
+
   
