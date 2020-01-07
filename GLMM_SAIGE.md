@@ -71,11 +71,14 @@ Rscript step1_fitNULLGLMM.R     \
 ## Output files
 
 a. Model file 
+
     * Open R
+    
     * load("./output/example_quantitative.rda")
       names(modglmm)
       modglmm$theta
       Result: 1.245839 (dispersion parameter estimate) 0.000000 (variance component parameter estimate)
+      
  b. Association result file for the selected markers
  
  `more example_quantitative_30markers.SAIGE.results.txt`
