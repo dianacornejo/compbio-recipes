@@ -24,12 +24,24 @@ Docker is a service for finding and sharing container images with your team
           
           docker build -t <your_username>/my-first-repo .
           docker build -t dianacornejo/new-repo . 
+          
+## Useful docker commands to keep in mind
+```
+docker log in #User:statisticalgenetics #Password:##Wombat19##
+docker build #Example: docker build -t statisticalgenetics/nps-1.1:1.1 -f ./nps.dockerfile .
+docker push #Example: docker push statisticalgenetics/nps1.1 
+docker push statisticalgenetics/nps-1.1:1.1 # Push an specific tagged version
+docker pull <image> #Example: docker pull statisticalgenetics/nps-1.1:1.1
+docker images
+docker stop <container id>
+
+```
             
 ## Creating a container for annovar in statgen-courses
 
 Being in the ~/statgen-course/docker folder run the following command:
 
-1. Create the DockerFile as the example below
+1. **Create the DockerFile as the example below:** `vim annovar.dockerfile`
 
 `FROM ubuntu:latest` **This command specifies de base image to derive from**
 
@@ -49,17 +61,22 @@ RUN echo "deb [trusted=yes] http://statgen.us/deb ./" | tee -a /etc/apt/sources.
 ARG DUMMY=unknown
 RUN DUMMY=${DUMMY} curl -fsSL https://raw.githubusercontent.com/statgenetics/statgen-courses/master/handout/FunctionalAnnotation.2019.docx`
 
-2. Build the docker image
+2. **Build the docker image**: You have to specify the path where your dockerfile is located to be able to create the image
 
-`docker build -t statisticalgenetics/annovar -f ./annovar.dockerfile .`
+`docker build -t statisticalgenetics/annovar -f ./annovar.dockerfile .` -t indicates tag, -f the file from which you wish to creater the docker image and the . to create the image. 
 
-3. Push it into dockerhub
+`docker build -t statisticalgenetics/annovar:0.1.0 -f ./annovar.dockerfile .` If you want to tag the docker image add : and then the version number
 
-`docker push statisticalgenetics/annovar`
+`docker build --build-arg DUMMY='date +%s' -t statisticalgenetics/nps1.1 -f docker/nps.dockerfile docker` You can also set build-time varirables and specify them when creating the image. 
 
-`statgen-setup login --tutorial annovar --my-name diana`
+3. **Push built image into dockerhub**: That way anyone can pull the image and use it
 
-4. Test the command line
+`docker push statisticalgenetics/annovar` Without tags
+`docker push statisticalgenetics/nps1.1:1.1` With tags
+
+`statgen-setup login --tutorial annovar --my-name diana` This step will allow you to run the different tutorials on the cloud
+
+4. **Test the command line**
 
 Start the tutorial as is written in the exercise
 
@@ -67,7 +84,7 @@ Start the tutorial as is written in the exercise
 
 This is based on Carl's deb packages
 
-1. Create the docker file
+1. **Create the docker file**
 
 ```
 FROM gaow/base-notebook:latest
@@ -92,17 +109,17 @@ RUN curl -fsSL https://raw.githubusercontent.com/statgenetics/statgen-courses/ma
 
 ```
 
-2. Build the docker image
+2. **Build the docker image**
 
 `docker build -t statisticalgenetics/regression -f ./regression.dockerfile .`
 
-3. Push the image into dockerhub
+3. **Push the image into dockerhub**
 
 `docker push statisticalgenetics/regression`
 
 `statgen-setup login --tutorial regression --my-name diana`
 
-4. Test the command line
+4. **Test the command line**
 
 Based on the exercise test that it runs
 
@@ -110,7 +127,7 @@ Based on the exercise test that it runs
 
 This is based on Carl's deb packages
 
-1. Create de dockerfile
+1. **Create de dockerfile**
 
 ```
 ROM gaow/base-notebook:latest
@@ -141,17 +158,17 @@ RUN curl -fsSL https://raw.githubusercontent.com/statgenetics/statgen-courses/ma
 RUN curl -fsSL https://raw.githubusercontent.com/statgenetics/statgen-courses/master/code/popgen_selection.R -o popgen_selection.R
 ```
 
-2. Build the docker image
+2. **Build the docker image**
 
 `docker build -t statisticalgenetics/popgen -f ./popgen.dockerfile .`
 
-3. Push the image into dockerhub
+3. **Push the image into dockerhub**
 
 `docker push statisticalgenetics/popgen`
 
 `statgen-setup login --tutorial popgen --my-name diana`
 
-4. Test the command line
+4. **Test the command line**
 
 Based on the exercise test that it runs
 
