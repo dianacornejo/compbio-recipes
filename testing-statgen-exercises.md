@@ -1,4 +1,5 @@
-# This is a guide to keep on track how did I checked the statgen exercises
+# This is a guide to keep on track how did I tested the statgen exercises
+Specifically when the were ran in the cloud
 
 First login as root in the virtual machine
 
@@ -24,15 +25,15 @@ To build an image using statgen-setup
 
 ## Testing IGV 
 
-First run this commands and follow Gao's Tutorial
+First of all to create docker images you have to login into dockerhub. To do so run the following commands and then follow Gao's Tutorial.
 
 ### Login to dockerhub
 
 `docker log in`
 
-User: statisticalgenetics
+<User: statisticalgenetics>
 
-Password: ##Wombat19##
+<Password: ##Wombat19##>
 
 ```
 statgen-setup -h
@@ -89,6 +90,7 @@ docker push statisticalgenetics/annovar
 The two commands above where replaced by `statgen-setup build --tutorial annovar`
 
 Now login into the VM and run the exercise in the cloud
+
 ```
 statgen-setup login --tutorial annovar --my-name statisticalgenetics
 
@@ -109,17 +111,5 @@ statgen-setup login --tutorial gemini --my-name statisticalgenetics
 statgen-setup build --tutorial mlink
 statgen-setup login --tutorial mlink --my-name statisticalgenetics
 
-```
-
-## Useful commands in docker
-
-```
-statgen-setup clean
-docker log in #User:statisticalgenetics #Password:##Wombat19##
-docker build #Example: docker build -t statisticalgenetics/nps-1.1 -f ./npsdockerfile .
-docker push #Example: docker push statisticalgenetics/nps1.1 
-docker pull <image> #Example: docker pull statisticalgenetics/nps-1.1
-docker images
-docker stop <container id>
 ```
 
