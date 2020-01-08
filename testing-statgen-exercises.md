@@ -113,9 +113,13 @@ statgen-setup login --tutorial mlink --my-name statisticalgenetics
 
 ## Useful commands in docker
 
-```statgen-setup clean
-   docker pull <image>
-   docker images
-   docker stop <container id>
+```
+statgen-setup clean
+docker log in #User:statisticalgenetics #Password:##Wombat19##
+docker build #Example: docker build -t statisticalgenetics/nps-1.1 -f ./npsdockerfile .
+docker push #Example: docker push statisticalgenetics/nps1.1 
+docker pull <image> #Example: docker pull statisticalgenetics/nps-1.1
+docker images
+docker stop <container id>
 ```
 
