@@ -29,8 +29,9 @@ For instaling Docker Desktop for MacOs click the link [Docker](https://docs.dock
 
 `docker log in ` User:**statisticalgenetics** Password:**##Wombat19##**
 
-`docker build -t NAME[:TAG] -f [PATH/dockerfile name] .` Example: `docker build -t statisticalgenetics/nps-1.1:1.1 -f ./nps.dockerfile .`
-`docker push OPTIONS NAME[:TAG]` Example: `docker push statisticalgenetics/nps1.1` or `docker push statisticalgenetics/nps-1.1:1.1` to push an specific tagged version
+`docker build -t NAME[:TAG] -f [PATH/dockerfile name] .`. Example: `docker build -t statisticalgenetics/nps-1.1:1.1 -f ./nps.dockerfile .`
+
+`docker push OPTIONS NAME[:TAG]`. Example: `docker push statisticalgenetics/nps1.1` or `docker push statisticalgenetics/nps-1.1:1.1` to push an specific tagged version
 
 You can build the docker containers if you have the statgen-setup script created by Gao simply writing:
 
