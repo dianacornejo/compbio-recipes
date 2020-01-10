@@ -4,7 +4,7 @@ Docker is a service for finding and sharing container images with your team
 
 ## Docker installation
 
-  For instaling Docker Desktop for MacOs click the link [Docker](https://docs.docker.com/docker-for-mac/install/) and follow instructions
+For instaling Docker Desktop for MacOs click the link [Docker](https://docs.docker.com/docker-for-mac/install/) and follow instructions
   
 ## Docker usage
 
@@ -26,16 +26,34 @@ Docker is a service for finding and sharing container images with your team
           docker build -t dianacornejo/new-repo . 
           
 ## Useful docker commands to keep in mind
-```
-docker log in #User:statisticalgenetics #Password:##Wombat19##
-docker build #Example: docker build -t statisticalgenetics/nps-1.1:1.1 -f ./nps.dockerfile .
-docker push #Example: docker push statisticalgenetics/nps1.1 
-docker push statisticalgenetics/nps-1.1:1.1 # Push an specific tagged version
-docker pull <image> #Example: docker pull statisticalgenetics/nps-1.1:1.1
-docker images
-docker stop <container id>
 
-```
+`docker log in ` User:**statisticalgenetics** Password:**##Wombat19##**
+
+`docker build -t NAME[:TAG] -f [PATH/dockerfile name] .` Example: `docker build -t statisticalgenetics/nps-1.1:1.1 -f ./nps.dockerfile .`
+`docker push OPTIONS NAME[:TAG]` Example: `docker push statisticalgenetics/nps1.1` or `docker push statisticalgenetics/nps-1.1:1.1` to push an specific tagged version
+
+You can build the docker containers if you have the statgen-setup script created by Gao simply writing:
+
+`statgen-setup build --tutorial nps --tag <version number>`. Using this script  the image is build and pushed to dockerhub so no further steps are necessary.
+
+`statgen-setup login --tutorial [tutorial name] --my-name [diana]`. Example: `statgen-setup login --tutorial nps --my-name diana` Use this command to run a specific tutorial. Don't forget to use a unique name.
+
+`statgen-setup clean`. To shutdown all containers and clean up the dangling ones. Run as a root. You should do this before building a new container and running it, so the changes in the dockerfile can take place. 
+
+`docker pull NAME[:TAG]`. Example: `docker pull statisticalgenetics/nps-1.1:1.1` This command pulls an image from a repository
+
+`docker run OPTIONS NAME[:TAG]`. Example: `docker run -it statisticalgenetics/nps-1.1:1.1` -i: interactive (Keep STDIN open even if not attached) and -t: Allocate a pseudo-TTY. 
+
+`docker images ls` To list all the created images
+
+`docker image rmi [image-number]` To delete the image you are specifying, option -f to force removal
+
+`docker ps -a` For a list of all running containers
+
+`docker stop [container id]` To stop a specific container
+
+`docker container stop $(docker container ls -aq)` To stop all running containers
+
             
 ## Creating a container for annovar in statgen-courses
 
