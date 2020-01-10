@@ -40,13 +40,13 @@ Just pull and run the docker image:
 
 1.  **Prepare input files**
 
-   1. GWAS summary statistics: MINIMAL or PREFORMATTED (**Test1.summstats.txt**)
-   2. Training genotypes in the qctool dosage format the data should be splitted by chromosome and named         "chromN.DatasetTag.dosage.gz." (**chrom1.Test1.train.dosage.gz**)
-   3. Training sample IDs in the PLINK .fam format (**Test1.train.2.5K_2.5K.fam**)
-   4. Training phenotypes in the PLINK phenotype format (**Test1.train.2.5K_2.5K.phen**)
-   5. Validation genotypes in the qctool dosage format (**chrom1.Test1.val.dosage.gz**)
-   6. Validation sample IDs in the PLINK .fam format (**Test1.val.5K.fam**)
-   7. Validation phenotypes in the PLINK phenotype format (**Test1.val.5K.phen**)
+  * GWAS summary statistics: MINIMAL or PREFORMATTED (**Test1.summstats.txt**)
+  * Training genotypes in the qctool dosage format the data should be splitted by chromosome and named          "chromN.DatasetTag.dosage.gz." (**chrom1.Test1.train.dosage.gz**)
+  * Training sample IDs in the PLINK .fam format (**Test1.train.2.5K_2.5K.fam**)
+  * Training phenotypes in the PLINK phenotype format (**Test1.train.2.5K_2.5K.phen**)
+  * Validation genotypes in the qctool dosage format (**chrom1.Test1.val.dosage.gz**)
+  * Validation sample IDs in the PLINK .fam format (**Test1.val.5K.fam**)
+  * Validation phenotypes in the PLINK phenotype format (**Test1.val.5K.phen**)
    
 2. **Unpack datafiles**
    
@@ -56,6 +56,7 @@ Just pull and run the docker image:
    cd nps-1.0.1/testdata/
    tar -zxvf NPS.Test1.tar.gz 
    ```
+   
 ### Running on test set #1  
 
 **Run NPS on test1 set without parallelization**
