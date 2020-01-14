@@ -37,6 +37,8 @@ You can build the docker containers if you have the statgen-setup script created
 
 * `statgen-setup build --tutorial nps --tag <version number>`. Using this script  the image is build and pushed to dockerhub so no further steps are necessary.
 
+* `statgen-setup launch --tutorial [NAME] --my-name [USER_NAME]`. This command is used to lauch a container from a docker image already created and uploaded to the repository. 
+
 * `statgen-setup login --tutorial [tutorial name] --my-name [diana]`. Example: `statgen-setup login --tutorial nps --my-name diana` Use this command to run a specific tutorial. Don't forget to use a unique name.
 
 * `statgen-setup clean`. To shutdown all containers and clean up the dangling ones. Run as a root. You should do this before building a new container and running it, so the changes in the dockerfile can take place. 
