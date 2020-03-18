@@ -20,6 +20,8 @@ git log| Keeps track of any change to any file| `git log` |
 git blame | Keeps track of changes more specifically. It allows you to easily see the history of modifications of a file, or restore the file to any time point in the history | `git blame` |
 git branch BRANCHNAME | to create a branch in someone else's repository | `git branch BRANCHNAME`
 git checkout -b BRANCHNAME | another way of creating branches | `git checkout -b ld-module`
+git push -u origin BRANCHNAME | push commits in the branch and then ask for pull request in github | `git push -u origin BRANCHNAME`
+
 
 ### First GitHub project
 1. Create a GitHub repository online going to `https://github.com/dianacornejo'`
