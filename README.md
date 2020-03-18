@@ -18,6 +18,7 @@ git checkout | | `git checkout <filename>` |
 git reset | | `git reset --hard` |
 git log| Keeps track of any change to any file| `git log` |
 git blame | Keeps track of changes more specifically. It allows you to easily see the history of modifications of a file, or restore the file to any time point in the history | `git blame` |
+git branch BRANCHNAME | to create a branch in someone else's repository
 
 ### First GitHub project
 1. Create a GitHub repository online going to `https://github.com/dianacornejo'`
