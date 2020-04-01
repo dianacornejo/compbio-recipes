@@ -125,7 +125,7 @@ done
   ```
   bash -x do-errors.sh *[AB].txt
   ```
-## Finding things in the shell
+## Finding things in the shell: grep, find 
 
 Find the lines that contain the word not
 
@@ -150,6 +150,26 @@ The flag `-w` searches for the entire word, `-n` outputs the line where there is
 The flag `-v` inverts the search. In this case it looks for the lines that **do not** contain the word "the"
 
 `grep -n -w -v "the" file.txt`
+
+**Find**
+
+Command | Description | Usage
+--------|-------------|-------
+find . | Outputs all the files within the working directory (wd) | `find .`
+find . -type d | Outputs the directories within the wd | `find . -type d`
+find . -type f | Outputs a list of files | `find .-type f`
+find . -name '\*.txt' | Outputs the files that end in .txt | `find . -name '*.txt'`
+
+**Subshells*
+
+Integrating commands
+
+`wc -l $(find . -name '*.txt')`
+`grep "FE" $(find .. -name '*.pdb')` Find all of the iron atoms in the pdb files 
+
+
+
+
 
 ## Configuring the PATH
 
