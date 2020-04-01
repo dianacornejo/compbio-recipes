@@ -17,6 +17,8 @@ Command | Description | Usage
 Ctrl+A | Move to the beginning of the line in the shell| |
 Ctrl+E | Move to the end of the line in the shell| |
 Ctrl+R | Search for previously typed commands | |
+Crtl+C | Kill the process (STOP NOW)| |
+Crtl+D | End of file (I'm all done)|
 !! | Shortcut to run the last command used | `!!`|
 !$ | Shortcut to retrieve the last word of the last command | `!$`|
 whoami | ID of the current user | `whoami`|
@@ -61,7 +63,6 @@ for filename in file1.dat file2.dat
 > do
 >    head -n 3 $filename
 > done
-
 ```
 Use ${filename} to explicitly indicate the variable name
 
@@ -71,7 +72,6 @@ do
     echo $filename
     head -n 100 $filename | tail -n 2
 done
-
 ```
 
 ```
@@ -79,7 +79,6 @@ for filename in *.dat
 do
     cp $filename original-$filename
 done
-
 ```
 
 Another way of writing the loops in the shell
@@ -87,6 +86,7 @@ Another way of writing the loops in the shell
 ```
 for datafile in *[AB].txt; do echo $datafile; bash goostats $datafile stats-$datafile; done
 ```
+
 ### Nested loops
 
 ```
@@ -98,13 +98,58 @@ do
     done
 done
 ```
+
 ## Shell scripts
 
-To create a script you can use `nano script.sh`
-Then you add whatever the commands you want to run, for example, `head -n "$2" "$1" | tail -n "$3"`, where `$1` represents the first parameter on the command line, `$2` and `$3` represent the number of lines that we want to retreive for the `head` and `tail` commands
-Afterwards you can just run the script in all the data by using `bash script.sh` or `bash script.sh filename`
+* To create a script you can use `nano script.sh`
 
+* Then you add whatever the commands you want to run, for example, `head -n "$2" "$1" | tail -n "$3"`, where `$1` represents the first parameter on the command line, `$2` and `$3` represent the number of lines that we want to retreive for the `head` and `tail` commands
 
+* Afterwards you can just run the script in all the data by using 
+  * `bash script.sh`
+  * `bash script.sh filename`
+  * `bash script.sh filename 15 5`
+
+* As a good practice always make sure your script is understandable to other and add comments to it
+```
+  # Select lines from the middle of a file.
+  # Usage: bash middle.sh filename end_line num_lines
+  ```
+  
+  The variable `"$@"` means all of the command-line parameteres to the shell script
+  
+  ### Debugging scripts
+  
+  Adding the -x option will help to debug scripts since the bash is going to show a trace of what it is doing.
+  
+  ```
+  bash -x do-errors.sh *[AB].txt
+  ```
+## Finding things in the shell
+
+Find the lines that contain the word not
+
+`grep not file.txt`
+
+To limit the search to word boundaries
+
+`grep -w day file.txt`
+
+To look for complete phrases use the `quotes`
+
+`grep -w "is not" file.txt`
+
+The flag `-n` outputs the lines where there is a match
+
+`grep -n "it" file.txt`
+
+The flag `-w` searches for the entire word, `-n` outputs the line where there is a match and `-i` makes the search case-insensitive
+
+`grep -n -w -i "the" file.txt`
+
+The flag `-v` inverts the search. In this case it looks for the lines that **do not** contain the word "the"
+
+`grep -n -w -v "the" file.txt`
 
 ## Configuring the PATH
 
