@@ -40,10 +40,10 @@ cat <file> | Prints the output of the file in the screen cat=concatenate | `cat 
 less <file> | To display a screenful of the file and then stop | `less lengths.txt`
 sort -n <file> | It sorts the file based on numerical data (-n) and displays output (does not change the file) | `sort -n lenghts.txt `
 head -n 1 <file> | To view the first line (-n 1) of the sorted file | `head -n 1 sorted_lenghts.txt`
-`sort -n <file> | head -n 1` | Here use sort and head together in a pipe | `sort -n lengths.txt | head -n 1`
+sort -n <file> \| head -n 1 | Here use sort and head together in a pipe | `sort -n lengths.txt \| head -n 1`
 tail -n 5 <file> | It displays the last 5 lines of the file | `tail -n 5 lenghts.txt`
 uniq <file> | Only removes adyacent duplicates within a file | `uniq file.txt`
-`sort file.txt | uniq` | This pipe will remove all the duplicates in a file | `sort file.txt | uniq`
+`sort file.txt \| uniq` | This pipe will remove all the duplicates in a file | `sort file.txt \| uniq`
 
 
 
