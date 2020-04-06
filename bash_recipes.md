@@ -118,6 +118,18 @@ done
   
   The variable `"$@"` means all of the command-line parameteres to the shell script
   
+  # Editing the display of the terminal MacOS
+  
+Add this lines to your `.bash_profile` file:
+
+```
+export PS1="\[\033[36m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+alias ls="ls -GFh"
+
+```
+  
   ### Debugging scripts
   
   Adding the -x option will help to debug scripts since the bash is going to show a trace of what it is doing.
