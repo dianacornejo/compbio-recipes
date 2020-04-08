@@ -53,6 +53,38 @@ This is to document clearly what you do in research
 * `conda install sos-r -c conda-forge`
 * `conda install sos-bash -c conda-forge`
 
+Create conda environments and install kernels specifically in one environment
+
+```
+conda create --name py37 python=3.7
+conda source activate py37
+conda install -n py37 markdown-kernel -c conda-forge #installation of markdown kernel
+conda install -n py37 sos-bash -c conda-forge #installation of bash kernel
+conda install -n py37 sos-r -c conda-forge #installation of R kernel
+conda install -n py37 notebook jupyterlab jupyter_contrib_nbextensions -c conda-forge #installation of jupyterlab and extensions
+conda install -n py37 jupyter-docx-bundler -c conda-forge #to save ipynb to docx
+jupyter bundlerextension enable --py jupyter_docx_bundler --sys-prefix
+conda install -n py37 nbdime -c conda-forge
+conda install -n py37 bash_kernel --no-cache-dir -c conda-forge
+conda install -n py37 sos-notebook jupyterlab-sos sos-papermill -c conda-forge
+```
+Available kernels should look like this in my computer
+
+```
+Available kernels:
+  bash            /Users/dianacornejo/miniconda3/envs/py37/share/jupyter/kernels/bash
+  calysto_bash    /Users/dianacornejo/miniconda3/envs/py37/share/jupyter/kernels/calysto_bash
+  ir              /Users/dianacornejo/miniconda3/envs/py37/share/jupyter/kernels/ir
+  markdown        /Users/dianacornejo/miniconda3/envs/py37/share/jupyter/kernels/markdown
+  python3         /Users/dianacornejo/miniconda3/envs/py37/share/jupyter/kernels/python3
+  sos             /Users/dianacornejo/miniconda3/envs/py37/share/jupyter/kernels/sos
+```
+  
+###**To see the installed kernels in jupyter**
+
+`jupyter kernelspec list`
+
+
 #### How to access you SoS notebook using docker
 * `$ docker run -it mdabioinfo/sos:latest /bin/bash`
 * `$ docker run -d -p 9999:8888 mdabioinfo/sos-notebook`
