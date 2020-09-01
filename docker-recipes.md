@@ -25,6 +25,10 @@ For instaling Docker Desktop for MacOs click the link [Docker](https://docs.dock
           docker build -t <your_username>/my-first-repo .
           docker build -t dianacornejo/new-repo . 
           
+     * Run the docker image with bash
+     
+          `docker run -t -i --rm dianacornejo/new-repo bash`
+          
 ## Useful docker commands to keep in mind
 
 * `docker log in ` User:**statisticalgenetics** Password:**##Wombat19##**
