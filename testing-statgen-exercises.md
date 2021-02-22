@@ -31,10 +31,6 @@ First of all to create docker images you have to login into dockerhub. To do so 
 
 `docker log in`
 
-<User: statisticalgenetics>
-
-<Password: ##Wombat19##>
-
 ```
 statgen-setup -h
 docker build --build-arg DUMMY=`date +%s` -t statisticalgenetics/igv -f docker/igv.dockerfile docker 
