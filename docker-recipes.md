@@ -35,7 +35,7 @@ For instaling Docker Desktop for MacOs click the link [Docker](https://docs.dock
           
 ## Useful docker commands to keep in mind
 
-* `docker log in ` User:**statisticalgenetics** Password:**##Wombat19##**
+* `docker log in`
 
 * `docker build -t NAME[:TAG] -f [PATH/dockerfile name] .`. Example: `docker build -t statisticalgenetics/nps-1.1:1.1 -f ./nps.dockerfile .`
 
