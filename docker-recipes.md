@@ -32,6 +32,9 @@ For instaling Docker Desktop for MacOs click the link [Docker](https://docs.dock
      * Create shared folders between host and container (example with standard image)
      
           `docker run -it  -v ~/test:/home/jovyan/work/ statisticalgenetics/lmm:1.3  bash`
+
+   * Remove images, containers and all the things that take space
+     `docker system prune --all --force --volumes`
           
 ## Useful docker commands to keep in mind
 
